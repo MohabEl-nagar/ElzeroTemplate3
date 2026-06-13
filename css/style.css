@@ -479,9 +479,10 @@ position: relative;
     height: 0;
     transform: translate(-50% , -50%);
     opacity: 0;
+    z-index: 2;
 }
 
-.gallery .container .box .image:hover::before {
+.gallery .box .image:hover::before {
     animation: flashing 0.7s;
 }
 /*flashing animation*/ 
@@ -497,5 +498,9 @@ position: relative;
 }
 .gallery  .box img {
     max-width: 100%;
+    transition : var(--main-transition)
+}
+.gallery  .box .image:hover img{
+    transform: rotate(7deg) scale(1.2); 
 }
 /*end of Gallery section*/
