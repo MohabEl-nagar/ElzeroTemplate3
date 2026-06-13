@@ -53,7 +53,7 @@ a{
 /* Header */
 .header {
     background-color: #eee;
-    box-shadow: 0 0 10px black;
+    box-shadow: 0 0 10px gray;
     position: relative;
    
 }
@@ -129,27 +129,68 @@ left: 0;
     width: 100%;
     left: 0;
     padding: 30px;
-    background-color: white;
+    background-color: #e4dfdf;
     border-bottom: 3px solid var(--main-color);
-    z-index: 100;
+    z-index: -1;
     display: flex;
     gap:  40px;
+    opacity: 0;
     top: calc(100% + 30px);
     transition: top var(--main-transition), opacity var(--main-transition);
 }
+/* to show the "other links"
+ section when hovered over*/
+.header .main-nav > li:hover .mega-menu{
+    opacity: 1;
+    z-index: 100;
+    top: calc(100% + 1px);
+}
+@media (max-width: 771px) {
+    .header .mega-menu {
+    flex-direction: column;
+    gap: 0;
+    padding: 5px;
+}
+}  
+
 .header .mega-menu .image img {
     max-width: 100%;
 }
+@media (max-width:991px) {
+    .header .mega-menu .image img {
+    display: none;
+}
+}
 .header .mega-menu .links{
-
+    min-width: 250px;
+    flex: 1;
 }
 .header .mega-menu .links li {
-
+    position: relative;
+}
+.header .mega-menu .links li:not(:last-child){
+    border-bottom: 1px solid black;
+}
+/*to show the border-bottom of the last
+ li in the first ul list in mobile form*/
+@media (max-width:761px){
+    .header .mega-menu .links:first-of-type li:last-child {
+        border-bottom: 1px solid black;
+    }
 }
 .header .mega-menu .links li::before {
-content: "";
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 100%;
+    background-color: #e9e6e6;
+    z-index: -1;
+    transition: var(--main-transition);
 }
 .header .mega-menu .links li:hover::before {
+    width: 100%;
 
 }
 .header .mega-menu .links li {
