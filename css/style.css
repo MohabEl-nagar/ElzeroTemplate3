@@ -213,19 +213,20 @@ left: 0;
     padding: 30px;
     background-color: #e4dfdf;
     border-bottom: 3px solid var(--main-color);
-    z-index: -1;
+    z-index: 100;
     display: flex;
     gap:  40px;
     opacity: 0;
+    visibility: hidden;
     top: calc(100% + 30px);
-    transition: top var(--main-transition), opacity var(--main-transition);
+    transition: top var(--main-transition), opacity var(--main-transition), visibility var(--main-transition);
 }
 /* to show the "other links"
  section when hovered over*/
 .header .main-nav > li:hover .mega-menu{
     opacity: 1;
-    z-index: 100;
-    top: calc(100% + 0.5px);
+    visibility: visible;
+    top: 100%
 }
 @media (max-width: 771px) {
     .header .mega-menu {
