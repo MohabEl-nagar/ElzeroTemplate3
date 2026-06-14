@@ -189,13 +189,13 @@ a{
 }
   }
 .header .main-nav > li > a::before {
-    content: 0;
+    content: "";
     position: absolute;
     background-color: var(--main-color);
     width: 100%;
     height: 6px;
     top: 0;
-    left: -80%;
+    left: -100%;
     transition: var(--main-transition);
 }
 .header .main-nav > li > a:hover {
