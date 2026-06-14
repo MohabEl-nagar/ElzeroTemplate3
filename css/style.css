@@ -342,7 +342,7 @@ left: 0;
 }
 @media (max-width: 991px){
     .landing .go-down{
-        margin-bottom: 120px;
+        margin-bottom: 0px;
     }
 }
 .landing .go-down i {
